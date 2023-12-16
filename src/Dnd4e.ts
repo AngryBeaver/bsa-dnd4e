@@ -48,7 +48,7 @@ export class dnd4e implements SystemApi {
         return Object.entries(CONFIG["DND4EBETA"].skills).map(([key,value]) => {
             return {
                 id: key,
-                label: game["i18n"].localize("DND4EBETA.Skill"  +key.toUpperCase())
+                label: game["i18n"].localize("DND4EBETA.Skill" +key.charAt(0).toUpperCase()+key.substring(1))
             };
         });
     }
@@ -57,7 +57,7 @@ export class dnd4e implements SystemApi {
         return Object.entries(CONFIG["DND4EBETA"].abilities).map(([key,value]) => {
             return {
                 id: key,
-                label: game["i18n"].localize("DND4EBETA.Ability" +key.toUpperCase())
+                label: game["i18n"].localize("DND4EBETA.Ability" +key.charAt(0).toUpperCase()+key.substring(1))
             };
         });
     }

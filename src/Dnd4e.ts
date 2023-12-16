@@ -45,19 +45,19 @@ export class dnd4e implements SystemApi {
     }
 
     get configSkills(): SkillConfig[] {
-        return Object.entries(CONFIG["DND4BETA"].skills).map(([key,value]) => {
+        return Object.entries(CONFIG["DND4EBETA"].skills).map(([key,value]) => {
             return {
                 id: key,
-                label: game["i18n"].localize("DND4BETA.Skill" +key)
+                label: game["i18n"].localize("DND4EBETA.Skill"  +key.toUpperCase())
             };
         });
     }
 
     get configAbilities(): AbilityConfig[] {
-        return Object.entries(CONFIG["DND4BETA"].abilities).map(([key,value]) => {
+        return Object.entries(CONFIG["DND4EBETA"].abilities).map(([key,value]) => {
             return {
                 id: key,
-                label: game["i18n"].localize("DND4BETA.Ability" +key)
+                label: game["i18n"].localize("DND4EBETA.Ability" +key.toUpperCase())
             };
         });
     }
@@ -67,27 +67,27 @@ export class dnd4e implements SystemApi {
             {
                 id: "ad",
                 factor: 1000000,
-                label: game["i18n"].localize("DND4BETA.CurrencyAD"),
+                label: game["i18n"].localize("DND4EBETA.CurrencyAD"),
             },
             {
                 id: "pp",
                 factor: 10000,
-                label: game["i18n"].localize("DND4BETA.CurrencyPP"),
+                label: game["i18n"].localize("DND4EBETA.CurrencyPP"),
             },
             {
                 id: "gp",
                 factor: 100,
-                label: game["i18n"].localize("DND4BETA.CurrencyGP"),
+                label: game["i18n"].localize("DND4EBETA.CurrencyGP"),
             },
             {
                 id: "sp",
                 factor: 10,
-                label: game["i18n"].localize("DND4BETA.CurrencySP"),
+                label: game["i18n"].localize("DND4EBETA.CurrencySP"),
             },
             {
                 id: "cp",
                 factor: 1,
-                label: game["i18n"].localize("DND4BETA.CurrencyCP"),
+                label: game["i18n"].localize("DND4EBETA.CurrencyCP"),
             }
         ]
     }

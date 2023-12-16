@@ -3,8 +3,8 @@
 	"title": "Beaver's System Adaption dnd4e",
 	"version": "1.0.0",
 	"description": "Beaver's System Adaption dnd4e",
-	"#devDir": "D:\\Vtts\\v10\\Data\\modules",
-	"devDir": "D:\\Vtts\\v11\\Data\\modules",
+	"devDir": "D:\\Vtts\\v10\\Data\\modules",
+	"#devDir": "D:\\Vtts\\v11\\Data\\modules",
 	"main": "src/main.js",
 	"files": [
 		"src/types.ts"

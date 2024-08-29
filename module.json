@@ -2,7 +2,7 @@
     "title": "Beaver's System Adaption dnd4e",
     "description": "dnd4e implementation for Beaver's System Interface",
     "id": "bsa-dnd4e",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "authors": [
       {
         "name": "angryBeaver",
@@ -15,7 +15,7 @@
       "src/main.js"
     ],
     "styles": [
-
+        "css/bsadnd4e.css"
     ],
     "packs": [
     ],
@@ -31,6 +31,6 @@
     },
     "compatibility": {
       "minimum": "10",
-      "verified": "11"
+      "verified": "12"
     }
   }

@@ -8,6 +8,13 @@ export class dnd4e implements SystemApi {
         return "dnd4e";
     }
 
+    config:string = "DND4EBETA"
+
+    constructor(){
+        if(!CONFIG[this.config]){
+            this.config = "DND4E"
+        }
+    }
     async actorRollSkill(actor, skillId): Promise<Roll | null> {
         return await actor.rollSkill(skillId);
     }
@@ -36,28 +43,26 @@ export class dnd4e implements SystemApi {
 
     itemSheetReplaceContent(app, html, element): void {
         html.find('.sheet-navigation').remove();
-        var properties = html.find('.item-properties').clone();
         const sheetBody = html.find('.sheet-body');
-        sheetBody.addClass("flexrow");
+        sheetBody.addClass("bsa-dnd4e");
         sheetBody.empty();
-        sheetBody.append(properties);
         sheetBody.append(element);
     }
 
     get configSkills(): SkillConfig[] {
-        return Object.entries(CONFIG["DND4EBETA"].skills).map(([key,value]) => {
+        return Object.entries(CONFIG[this.config].skills).map(([key,value]) => {
             return {
                 id: key,
-                label: game["i18n"].localize("DND4EBETA.Skill" +key.charAt(0).toUpperCase()+key.substring(1))
+                label: game["i18n"].localize(this.config+".Skill" +key.charAt(0).toUpperCase()+key.substring(1))
             };
         });
     }
 
     get configAbilities(): AbilityConfig[] {
-        return Object.entries(CONFIG["DND4EBETA"].abilities).map(([key,value]) => {
+        return Object.entries(CONFIG[this.config].abilities).map(([key,value]) => {
             return {
                 id: key,
-                label: game["i18n"].localize("DND4EBETA.Ability" +key.charAt(0).toUpperCase()+key.substring(1))
+                label: game["i18n"].localize(this.config+".Ability" +key.charAt(0).toUpperCase()+key.substring(1))
             };
         });
     }
@@ -67,27 +72,27 @@ export class dnd4e implements SystemApi {
             {
                 id: "ad",
                 factor: 1000000,
-                label: game["i18n"].localize("DND4EBETA.CurrencyAD"),
+                label: game["i18n"].localize(this.config+".CurrencyAD"),
             },
             {
                 id: "pp",
                 factor: 10000,
-                label: game["i18n"].localize("DND4EBETA.CurrencyPP"),
+                label: game["i18n"].localize(this.config+".CurrencyPP"),
             },
             {
                 id: "gp",
                 factor: 100,
-                label: game["i18n"].localize("DND4EBETA.CurrencyGP"),
+                label: game["i18n"].localize(this.config+".CurrencyGP"),
             },
             {
                 id: "sp",
                 factor: 10,
-                label: game["i18n"].localize("DND4EBETA.CurrencySP"),
+                label: game["i18n"].localize(this.config+".CurrencySP"),
             },
             {
                 id: "cp",
                 factor: 1,
-                label: game["i18n"].localize("DND4EBETA.CurrencyCP"),
+                label: game["i18n"].localize(this.config+".CurrencyCP"),
             }
         ]
     }

@@ -1,0 +1,7 @@
+.bsa-dnd4e .tab[data-tab] {
+    display: none;
+}
+
+.bsa-dnd4e .tab[data-tab].active {
+    display: block;
+}
